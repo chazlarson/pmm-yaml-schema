@@ -6,3 +6,7 @@ limitations:
 - template variables with keys are wildcarded
 - "position" attribute has no validation
 - "streaming" default has no validation
+
+TODO:
+
+- schema for matadata yaml
