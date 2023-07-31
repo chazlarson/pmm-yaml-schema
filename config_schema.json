@@ -693,6 +693,16 @@
                     "type": "string",
                     "enum": ["aspect","audio_codec","commonsense","content_rating_uk","content_rating_us_movie","content_rating_us_show","direct_play","episode_info","flixpatrol","language_count","languages","mediastinger","network","ratings","resolution","ribbon","runtimes","status","streaming","studio","versions","video_format"]
                 },
+                "remove_overlays": {
+                    "type": "boolean"
+                },
+                "reapply_overlays": {
+                    "type": "boolean"
+                },
+                "reset_overlays": {
+                    "type": "string",
+                    "enum": ["tmdb","plex"]
+                },
                 "schedule": {
                     "type": "string"
                 },
