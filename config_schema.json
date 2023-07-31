@@ -231,13 +231,13 @@
                     "type": "string"
                 },
                 "version": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "language": {
                     "type": "string"
                 },
                 "cache_expiration": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "username": {
                     "type": "string"
