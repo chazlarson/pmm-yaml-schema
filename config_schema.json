@@ -258,6 +258,12 @@
                 "add_existing": {
                     "type": "boolean"
                 },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
+                "upgrade_existing": {
+                    "type": "boolean"
+                },
                 "season_folder": {
                     "type": "boolean"
                 },
@@ -323,6 +329,12 @@
                 "add_existing": {
                     "type": "boolean"
                 },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
+                "upgrade_existing": {
+                    "type": "boolean"
+                },
                 "season_folder": {
                     "type": "boolean"
                 },
@@ -383,6 +395,9 @@
                 "add_existing": {
                     "type": "boolean"
                 },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
                 "upgrade_existing": {
                     "type": "boolean"
                 },
@@ -393,8 +408,7 @@
                     "type": "string"
                 },
                 "monitor": {
-                    "type": "string",
-                    "enum": ["true","false"]
+                    "type": "boolean"
                 },
                 "quality_profile": {
                     "type": "string"
@@ -442,6 +456,9 @@
                 "add_existing": {
                     "type": "boolean"
                 },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
                 "upgrade_existing": {
                     "type": "boolean"
                 },
@@ -452,8 +469,7 @@
                     "type": "string"
                 },
                 "monitor": {
-                    "type": "string",
-                    "enum": ["true","false"]
+                    "type": "boolean"
                 },
                 "quality_profile": {
                     "type": "string"
