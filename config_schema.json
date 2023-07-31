@@ -638,7 +638,7 @@
             "properties": {
                 "pmm": {
                     "type": "string",
-                    "enum": ["actor", "anilist","audio_language","bafta","based","basic","cannes","choice","collectionless","content_rating_cs","content_rating_mal","content_rating_uk","content_rating_us","country","decade","director","emmy","flixpatrol","franchise","genre","golden","imdb","myanimelist","network","oscars","other_award","other_chart","producer","resolution","seasonal","separator_award","spirit","streaming","studio","studio_anime","subtitle_language","sundance","tautulli","tmdb","trakt","universe","writer","year"]
+                    "enum": ["actor", "anilist","aspect","audio_language","bafta","based","basic","cannes","choice","collectionless","content_rating_cs","content_rating_mal","content_rating_uk","content_rating_us","country","decade","director","emmy","flixpatrol","franchise","genre","golden","imdb","myanimelist","network","oscars","other_award","other_chart","producer","resolution","seasonal","separator_award","spirit","streaming","studio","studio_anime","subtitle_language","sundance","tautulli","tmdb","trakt","universe","writer","year"]
                 },
                 "schedule": {
                     "type": "string"
