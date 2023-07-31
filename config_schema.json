@@ -1035,7 +1035,7 @@
                 "back_padding": { "type": "integer", "exclusiveMinimum": 0 },
                 "back_radius": { "type": "integer", "exclusiveMinimum": 0 },
                 "back_width": { "type": "integer", "exclusiveMinimum": 0 },
-                "builder_level": { "type": "string", "enum": ["season","episode"] },
+                "builder_level": { "type": "string", "enum": ["show","season","episode"] },
                 "file": { "type": "string" },
                 "flag_alignment": { "type": "string", "enum": ["left","right"] },
                 "font_color": { "type": "string", "pattern": "^\\#(\\d{3}|\\d{4}|\\d{6}|\\d{8})$" },
