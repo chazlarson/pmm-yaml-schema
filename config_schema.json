@@ -391,7 +391,7 @@
                 },
                 "monitor": {
                     "type": "string",
-                    "enum": ["movie","collection","none"]
+                    "enum": ["true","false"]
                 },
                 "quality_profile": {
                     "type": "string"
@@ -450,7 +450,7 @@
                 },
                 "monitor": {
                     "type": "string",
-                    "enum": ["movie","collection","none"]
+                    "enum": ["true","false"]
                 },
                 "quality_profile": {
                     "type": "string"
