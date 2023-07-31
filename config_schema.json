@@ -167,6 +167,9 @@
                 },
                 "changes": {
                     "type": "string"
+                },
+                "delete": {
+                    "type": "string"
                 }
             },
             "required": [
