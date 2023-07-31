@@ -839,7 +839,7 @@
             }
         },
         "metadata-path": {
-            "title": "matadata_path",
+            "title": "metadata_path",
             "additionalProperties": false,
             "type": "array",
             "items": {
