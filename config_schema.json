@@ -227,6 +227,18 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "client": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "cache_expiration": {
+                    "type": "string"
+                },
                 "username": {
                     "type": "string"
                 },
