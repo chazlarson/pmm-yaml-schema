@@ -572,7 +572,7 @@
                 "item_refresh_delay": {
                     "type": "integer"
                 },
-                "playlist_sync_to_user": {
+                "playlist_sync_to_users": {
                     "type": "string"
                 },
                 "playlist_exclude_users": {
