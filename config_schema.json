@@ -119,7 +119,8 @@
                     "type": "string"
                 },
                 "region": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["","AD","AE","AF","AG","AI","AL","AM","AN","AO","AQ","AR","AS","AT","AU","AW","AZ","BA","BB","BD","BE","BF","BG","BH","BI","BJ","BM","BN","BO","BR","BS","BT","BU","BV","BW","BY","BZ","CA","CC","CD","CF","CG","CH","CI","CK","CL","CM","CN","CO","CR","CS","CU","CV","CX","CY","CZ","DE","DJ","DK","DM","DO","DZ","EC","EE","EG","EH","ER","ES","ET","FI","FJ","FK","FM","FO","FR","GA","GB","GD","GE","GF","GH","GI","GL","GM","GN","GP","GQ","GR","GS","GT","GU","GW","GY","HK","HM","HN","HR","HT","HU","ID","IE","IL","IN","IO","IQ","IR","IS","IT","JM","JO","JP","KE","KG","KH","KI","KM","KN","KP","KR","KW","KY","KZ","LA","LB","LC","LI","LK","LR","LS","LT","LU","LV","LY","MA","MC","MD","ME","MG","MH","MK","ML","MM","MN","MO","MP","MQ","MR","MS","MT","MU","MV","MW","MX","MY","MZ","NA","NC","NE","NF","NG","NI","NL","NO","NP","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PL","PM","PN","PR","PS","PT","PW","PY","QA","RE","RO","RS","RU","RW","SA","SB","SC","SD","SE","SG","SH","SI","SJ","SK","SL","SM","SN","SO","SR","SS","ST","SU","SV","SY","SZ","TC","TD","TF","TG","TH","TJ","TK","TL","TM","TN","TO","TP","TR","TT","TV","TW","TZ","UA","UG","UM","US","UY","UZ","VA","VC","VE","VG","VI","VN","VU","WF","WS","XC","XG","XI","XK","YE","YT","YU","ZA","ZM","ZR","ZW"]
                 },
                 "cache_expiration": {
                     "type": "integer"
@@ -166,6 +167,9 @@
                     "type": "string"
                 },
                 "changes": {
+                    "type": "string"
+                },
+                "delete": {
                     "type": "string"
                 }
             },
@@ -224,6 +228,18 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "client": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "cache_expiration": {
+                    "type": "integer"
+                },
                 "username": {
                     "type": "string"
                 },
@@ -253,6 +269,12 @@
                     "type": "boolean"
                 },
                 "add_existing": {
+                    "type": "boolean"
+                },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
+                "upgrade_existing": {
                     "type": "boolean"
                 },
                 "season_folder": {
@@ -320,6 +342,12 @@
                 "add_existing": {
                     "type": "boolean"
                 },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
+                "upgrade_existing": {
+                    "type": "boolean"
+                },
                 "season_folder": {
                     "type": "boolean"
                 },
@@ -380,6 +408,9 @@
                 "add_existing": {
                     "type": "boolean"
                 },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
                 "upgrade_existing": {
                     "type": "boolean"
                 },
@@ -390,8 +421,7 @@
                     "type": "string"
                 },
                 "monitor": {
-                    "type": "string",
-                    "enum": ["movie","collection","none"]
+                    "type": "boolean"
                 },
                 "quality_profile": {
                     "type": "string"
@@ -439,6 +469,9 @@
                 "add_existing": {
                     "type": "boolean"
                 },
+                "ignore_cache": {
+                    "type": "boolean"
+                },
                 "upgrade_existing": {
                     "type": "boolean"
                 },
@@ -449,8 +482,7 @@
                     "type": "string"
                 },
                 "monitor": {
-                    "type": "string",
-                    "enum": ["movie","collection","none"]
+                    "type": "boolean"
                 },
                 "quality_profile": {
                     "type": "string"
@@ -572,7 +604,7 @@
                 "item_refresh_delay": {
                     "type": "integer"
                 },
-                "playlist_sync_to_user": {
+                "playlist_sync_to_users": {
                     "type": "string"
                 },
                 "playlist_exclude_users": {
@@ -638,7 +670,7 @@
             "properties": {
                 "pmm": {
                     "type": "string",
-                    "enum": ["actor", "anilist","audio_language","bafta","based","basic","cannes","choice","collectionless","content_rating_cs","content_rating_mal","content_rating_uk","content_rating_us","country","decade","director","emmy","flixpatrol","franchise","genre","golden","imdb","myanimelist","network","oscars","other_award","other_chart","producer","resolution","seasonal","separator_award","spirit","streaming","studio","studio_anime","subtitle_language","sundance","tautulli","tmdb","trakt","universe","writer","year"]
+                    "enum": ["actor", "anilist","aspect","audio_language","bafta","based","basic","cannes","choice","collectionless","content_rating_cs","content_rating_mal","content_rating_uk","content_rating_us","continent","country","decade","director","emmy","flixpatrol","franchise","genre","golden","imdb","myanimelist","network","oscars","other_award","other_chart","producer","region","resolution","seasonal","separator_award","separator_chart","spirit","streaming","studio","subtitle_language","sundance","tautulli","tmdb","trakt","universe","writer","year"]
                 },
                 "schedule": {
                     "type": "string"
@@ -660,7 +692,17 @@
             "properties": {
                 "pmm": {
                     "type": "string",
-                    "enum": ["audio_codec","commonsense","direct_play","episode_info","flixpatrol","language_count","languages","mediastinger","ratings","resolution","ribbon","runtimes","status","streaming","versions","video_format"]
+                    "enum": ["aspect","audio_codec","commonsense","content_rating_uk","content_rating_us_movie","content_rating_us_show","direct_play","episode_info","flixpatrol","language_count","languages","mediastinger","network","ratings","resolution","ribbon","runtimes","status","streaming","studio","versions","video_format"]
+                },
+                "remove_overlays": {
+                    "type": "boolean"
+                },
+                "reapply_overlays": {
+                    "type": "boolean"
+                },
+                "reset_overlays": {
+                    "type": "string",
+                    "enum": ["tmdb","plex"]
                 },
                 "schedule": {
                     "type": "string"
@@ -839,7 +881,7 @@
             }
         },
         "metadata-path": {
-            "title": "matadata_path",
+            "title": "metadata_path",
             "additionalProperties": false,
             "type": "array",
             "items": {
@@ -1035,7 +1077,7 @@
                 "back_padding": { "type": "integer", "exclusiveMinimum": 0 },
                 "back_radius": { "type": "integer", "exclusiveMinimum": 0 },
                 "back_width": { "type": "integer", "exclusiveMinimum": 0 },
-                "builder_level": { "type": "string", "enum": ["season","episode"] },
+                "builder_level": { "type": "string", "enum": ["show","season","episode"] },
                 "file": { "type": "string" },
                 "flag_alignment": { "type": "string", "enum": ["left","right"] },
                 "font_color": { "type": "string", "pattern": "^\\#(\\d{3}|\\d{4}|\\d{6}|\\d{8})$" },
