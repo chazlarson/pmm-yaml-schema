@@ -1,3 +1,4 @@
+
 # yaml-language-server: $schema=https://raw.githubusercontent.com/chazlarson/pmm-yaml-schema/main/config_schema.json
 
 libraries:
@@ -8,6 +9,38 @@ libraries:
       collection_mode: hide                         # hide the collections within the "library" tab in Plex.
       placeholder_imdb_id: tt8579674                # 1917 (2019) placeholder id for the separators, avoids a plex bug.
     metadata_path:
+    - pmm: cannes
+    - pmm: choice
+    - pmm: emmy
+    - pmm: spirit
+    - pmm: sundance
+    - pmm: other_award
+    - pmm: tautulli
+    - pmm: imdb
+    - pmm: trakt
+    - pmm: flixpatrol
+    - pmm: anilist
+    - pmm: myanimelist
+    - pmm: other_chart
+    - pmm: genre
+    - pmm: franchise
+    - pmm: based
+    - pmm: content_rating_us
+    - pmm: content_rating_uk
+    - pmm: content_rating_mal
+    - pmm: content_rating_cs
+    - pmm: country
+    - pmm: region
+    - pmm: continent
+    - pmm: aspect
+    - pmm: subtitle_language
+    - pmm: actor
+    - pmm: director
+    - pmm: producer
+    - pmm: writer
+    - pmm: year
+    - pmm: decade
+    - pmm: collectionless
     - pmm: separator_award                          # An "index card"
     - pmm: bafta                                    # BAFTA Awards
       template_variables:                           # Show collections from current_year-10 onwards.
@@ -43,6 +76,19 @@ libraries:
 	    originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
     - pmm: universe                                 # Marvel Cinematic Universe, Wizarding World, etc.
     overlay_path:
+    - pmm: flixpatrol
+    - pmm: episode_info
+    - pmm: mediastinger
+    - pmm: ratings
+    - pmm: status
+    - pmm: aspect
+    - pmm: language_count
+    - pmm: languages
+    - pmm: runtimes
+    - pmm: versions
+    - pmm: network
+    - pmm: studio
+    - pmm: direct_play
     - remove_overlays: false                        # Set to true if you want to remove overlays
     # - reapply_overlay: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
     # - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb - can cause image bloat
@@ -66,6 +112,38 @@ libraries:
       collection_mode: hide                         # hide the collections within the "library" tab in Plex.
       placeholder_imdb_id: tt1190634                # The Boys (2019) placeholder id for the separators, avoids a plex bug.
     metadata_path:
+    - pmm: cannes
+    - pmm: choice
+    - pmm: emmy
+    - pmm: spirit
+    - pmm: sundance
+    - pmm: other_award
+    - pmm: tautulli
+    - pmm: imdb
+    - pmm: trakt
+    - pmm: flixpatrol
+    - pmm: anilist
+    - pmm: myanimelist
+    - pmm: other_chart
+    - pmm: genre
+    - pmm: franchise
+    - pmm: based
+    - pmm: content_rating_us
+    - pmm: content_rating_uk
+    - pmm: content_rating_mal
+    - pmm: content_rating_cs
+    - pmm: country
+    - pmm: region
+    - pmm: continent
+    - pmm: aspect
+    - pmm: subtitle_language
+    - pmm: actor
+    - pmm: director
+    - pmm: producer
+    - pmm: writer
+    - pmm: year
+    - pmm: decade
+    - pmm: collectionless
     - pmm: separator_award                          # An "index card"
     - pmm: bafta                                    # BAFTA Awards
       template_variables:                           # Show collections from current_year-10 onwards.
@@ -97,6 +175,17 @@ libraries:
     - remove_overlays: false                        # Set to true if you want to remove overlays
     # - reapply_overlay: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
     # - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb - can cause image bloat
+    - pmm: flixpatrol
+    - pmm: mediastinger
+    - pmm: ratings
+    - pmm: status
+    - pmm: aspect
+    - pmm: language_count
+    - pmm: languages
+    - pmm: runtimes
+    - pmm: network
+    - pmm: studio
+    - pmm: direct_play
     - pmm: audio_codec                              # FLAC, DTS-X, TrueHD, etc. on show and episode
     - pmm: audio_codec
       template_variables:
