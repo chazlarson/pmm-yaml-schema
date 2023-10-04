@@ -1031,19 +1031,21 @@
                     "type": "string",
                     "enum": ["default","hide","hide_items","show_items"]
                 },
-                "radarr_remove_by_tag": {
-                    "type": "string"
-                },
-                "sonarr_remove_by_tag": {
-                    "type": "string"
+                "radarr_remove_by_tag": { "type": "string" },
+                "sonarr_remove_by_tag": { "type": "string" },
+                "delete_collections": {
+                  "type": "object",
+                  "properties": {
+                    "configured": { "type": "boolean" },
+                    "managed": { "type": "boolean" }
+                  },
+                  "required": ["configured", "managed"]
                 }
+              },
+              "required": [],
+              "dependentRequired": {},
+              "title": "operations"
             },
-            "required": [
-            ],
-            "dependentRequired": {
-            },            
-            "title": "operations"
-        },
         "template-variables-library": {
             "type": "object",
             "properties": {
