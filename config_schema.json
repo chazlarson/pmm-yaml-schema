@@ -64,6 +64,9 @@
                 "timeout": {
                     "type": "integer"
                 },
+                "db_cache": {
+                    "type": "integer"
+                },
                 "clean_bundles": {
                     "type": "boolean"
                 },
