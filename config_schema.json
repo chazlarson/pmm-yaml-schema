@@ -1096,12 +1096,21 @@
               "style": {
                 "type": "string",
                 "enum": ["color", "white", "bw", "diiivoy", "diiivoycolor", "rainier", "signature", "orig", "transparent"]
+              },
+              "depth": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 1
               }
             },
             "required": [],
             "dependentRequired": {},
             "title": "template_variables"
-          },
+          }
+          ,
         "template-variables-overlays": {
             "type": "object",
             "additionalProperties": false,
