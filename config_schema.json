@@ -1047,6 +1047,7 @@
         "template-variables-library": {
             "type": "object",
             "properties": {
+            "style": { "type": "string", "enum": ["color", "white"]  },
             "sep_style": { "type": "string", "enum": ["amethyst", "aqua", "blue", "forest", "fuchsia", "gold", "gray", "green", "navy", "ocean", "olive", "orchid", "orig", "pink", "plum", "purple", "red", "rust", "salmon", "sand", "stb", "tan"]  },
             "collection_mode": { "type": "string", "enum": ["default", "hide", "hide_items", "show_items"] },
             "language": { "type": "string", "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no"] },
