@@ -721,7 +721,6 @@
                 }
             },
             "required": [
-                "pmm"
             ]
         },
         "pmm-playlist-path": {
