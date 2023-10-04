@@ -1109,8 +1109,7 @@
             "required": [],
             "dependentRequired": {},
             "title": "template_variables"
-          }
-          ,
+          },
         "template-variables-overlays": {
             "type": "object",
             "additionalProperties": false,
