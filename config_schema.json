@@ -1097,7 +1097,7 @@
             },
             "style": {
                 "type": "string",
-                "enum": ["color", "white", "bw", "diiivoy", "diiivoycolor", "rainier", "signature", "orig", "transparent"]
+                "enum": ["color", "white", "bw", "diiivoy", "diiivoycolor", "rainier", "signature", "orig", "transparent", "default", "standards"]
             }
             },
             "required": [],
