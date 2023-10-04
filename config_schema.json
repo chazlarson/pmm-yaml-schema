@@ -1089,21 +1089,15 @@
                       { "type": "string", "pattern": "^current_year(-\\d+)?$" }
                     ]
                   },
-                  "increment": { "type": "integer", "minimum": 0 }
+                  "increment": { "type": "integer", "minimum": 0 },
+                  "depth": { "type": "integer", "minimum": 1 },
+                  "limit": { "type": "integer", "minimum": 1 }
                 },
                 "additionalProperties": false
               },
               "style": {
                 "type": "string",
                 "enum": ["color", "white", "bw", "diiivoy", "diiivoycolor", "rainier", "signature", "orig", "transparent"]
-              },
-              "depth": {
-                "type": "integer",
-                "minimum": 1
-              },
-              "limit": {
-                "type": "integer",
-                "minimum": 1
               }
             },
             "required": [],
