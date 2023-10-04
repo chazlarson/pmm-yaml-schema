@@ -1051,11 +1051,29 @@
         "template-variables-library": {
             "type": "object",
             "properties": {
-              "style": { "type": "string", "enum": ["color", "white", "bw", "diiivoy", "diiivoycolor", "rainier", "signature", "orig", "transparent"] },
-              "sep_style": { "type": "string", "enum": ["amethyst", "aqua", "blue", "forest", "fuchsia", "gold", "gray", "green", "navy", "ocean", "olive", "orchid", "orig", "pink", "plum", "purple", "red", "rust", "salmon", "sand", "stb", "tan"] },
-              "collection_mode": { "type": "string", "enum": ["default", "hide", "hide_items", "show_items"] },
-              "language": { "type": "string", "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no"] },
-              "placeholder_imdb_id": { "type": "string", "pattern": "^tt\\d{7}$" },
+              "sep_style": {
+                "type": "string",
+                "enum": ["amethyst", "aqua", "blue", "forest", "fuchsia", "gold", "gray", "green", "navy", "ocean", "olive", "orchid", "orig", "pink", "plum", "purple", "red", "rust", "salmon", "sand", "stb", "tan"]
+              },
+              "collection_mode": {
+                "type": "string",
+                "enum": ["default", "hide", "hide_items", "show_items"]
+              },
+              "language": {
+                "type": "string",
+                "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no"]
+              },
+              "placeholder_imdb_id": {
+                "type": "string",
+                "pattern": "^tt\\d{7}$"
+              }
+            },
+            "required": [],
+            "title": "template_variables"
+          },
+        "template-variables-collections": {
+            "type": "object",
+            "properties": {
               "data": {
                 "type": "object",
                 "properties": {
@@ -1074,23 +1092,16 @@
                   "increment": { "type": "integer", "minimum": 0 }
                 },
                 "additionalProperties": false
+              },
+              "style": {
+                "type": "string",
+                "enum": ["color", "white", "bw", "diiivoy", "diiivoycolor", "rainier", "signature", "orig", "transparent"]
               }
             },
-            "required": [
-            ],
+            "required": [],
+            "dependentRequired": {},
             "title": "template_variables"
           },
-        "template-variables-collections": {
-            "type": "array",
-            "additionalProperties": true,
-            "properties": {
-            },
-            "required": [
-            ],
-            "dependentRequired": {
-            },            
-            "title": "template_variables"
-        },
         "template-variables-overlays": {
             "type": "object",
             "additionalProperties": false,
