@@ -1074,7 +1074,7 @@
                 "additionalProperties": false
               }
             },
-            "required": ["style", "sep_style", "collection_mode", "language", "placeholder_imdb_id"],
+            "required": [],
             "title": "template_variables"
           },
         "template-variables-collections": {
