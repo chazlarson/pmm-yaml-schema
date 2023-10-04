@@ -1044,14 +1044,14 @@
         "template-variables-library": {
             "type": "object",
             "properties": {
-              "sep_style": { "type": "string" },
-              "collection_mode": { "type": "string" },
-              "language": { "type": "string" },
-              "placeholder_imdb_id": { "type": "string" }
+            "sep_style": { "type": "string", "enum": ["left","top","bottom","right"]  },
+            "collection_mode": { "type": "string" },
+            "language": { "type": "string" },
+            "placeholder_imdb_id": { "type": "string" }
             },
             "required": ["sep_style", "collection_mode", "language", "placeholder_imdb_id"],
             "title": "template_variables"
-          },
+        },
         "template-variables-collections": {
             "type": "array",
             "additionalProperties": true,
