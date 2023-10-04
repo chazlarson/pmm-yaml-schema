@@ -1044,12 +1044,15 @@
         "template-variables-library": {
             "type": "object",
             "properties": {
-            "sep_style": { "type": "string", "enum": ["left","top","bottom","right"]  },
-            "collection_mode": { "type": "string" },
-            "language": { "type": "string" },
-            "placeholder_imdb_id": { "type": "string" }
+            "sep_style": { "type": "string", "enum": ["amethyst", "aqua", "blue", "forest", "fuchsia", "gold", "gray", "green", "navy", "ocean", "olive", "orchid", "orig", "pink", "plum", "purple", "red", "rust", "salmon", "sand", "stb", "tan"]  },
+            "collection_mode": { "type": "string", "enum": ["default", "hide", "hide_items", "show_items"] },
+            "language": { "type": "string", "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no"] },
+            "placeholder_imdb_id": { "type": "string", "pattern": "^tt\\d{7}$" }
             },
-            "required": ["sep_style", "collection_mode", "language", "placeholder_imdb_id"],
+            "required": [
+            ],
+            "dependentRequired": {
+            },
             "title": "template_variables"
         },
         "template-variables-collections": {
