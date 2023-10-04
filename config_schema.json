@@ -1134,7 +1134,7 @@
                 "repo": { "type": "string" },
                 "stroke_color": { "type": "string", "pattern": "^\\#(\\d{3}|\\d{4}|\\d{6}|\\d{8})$" },
                 "stroke_width": { "type": "integer", "exclusiveMinimum": 0 },
-                "style": { "type": "string", "enum": ["compact","standard","bigger","round","square","half"] },
+                "style": { "type": "string", "enum": ["compact","standard","bigger","round","square","half", "red", "black", "yellow", "gray"] },
                 "text": { "type": "string" },
                 "time_window": { "type": "string", "enum": ["today","yesterday","this_week","last_week","this_month","last_month","this_year","last_year"] },
                 "url": { "type": "string", "format": "uri", "pattern": "^(https?)://" },
