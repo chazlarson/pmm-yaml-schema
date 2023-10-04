@@ -1049,42 +1049,34 @@
         "template-variables-library": {
             "type": "object",
             "properties": {
-            "style": { "type": "string", "enum": ["color", "white"]  },
-            "sep_style": { "type": "string", "enum": ["amethyst", "aqua", "blue", "forest", "fuchsia", "gold", "gray", "green", "navy", "ocean", "olive", "orchid", "orig", "pink", "plum", "purple", "red", "rust", "salmon", "sand", "stb", "tan"]  },
-            "collection_mode": { "type": "string", "enum": ["default", "hide", "hide_items", "show_items"] },
-            "language": { "type": "string", "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no"] },
-            "placeholder_imdb_id": { "type": "string", "pattern": "^tt\\d{7}$" }
-            },
-            "data": {
+              "style": { "type": "string", "enum": ["color", "white"] },
+              "sep_style": { "type": "string", "enum": ["amethyst", "aqua", "blue", "forest", "fuchsia", "gold", "gray", "green", "navy", "ocean", "olive", "orchid", "orig", "pink", "plum", "purple", "red", "rust", "salmon", "sand", "stb", "tan"] },
+              "collection_mode": { "type": "string", "enum": ["default", "hide", "hide_items", "show_items"] },
+              "language": { "type": "string", "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no"] },
+              "placeholder_imdb_id": { "type": "string", "pattern": "^tt\\d{7}$" },
+              "data": {
                 "type": "object",
                 "properties": {
-                "starting": {
-                "oneOf": [
-                    { "type": "integer", "minimum": 0 },
-                    { "type": "string", "pattern": "^current_year(-\\d+)?$" }
-                ]
+                  "starting": {
+                    "oneOf": [
+                      { "type": "integer", "minimum": 0 },
+                      { "type": "string", "pattern": "^current_year(-\\d+)?$" }
+                    ]
+                  },
+                  "ending": {
+                    "oneOf": [
+                      { "type": "integer", "minimum": 1 },
+                      { "type": "string", "pattern": "^current_year(-\\d+)?$" }
+                    ]
+                  },
+                  "increment": { "type": "integer", "minimum": 0 }
                 },
-                "ending": {
-                "oneOf": [
-                    { "type": "integer", "minimum": 1 },
-                    { "type": "string", "pattern": "^current_year(-\\d+)?$" }
-                ]
-                },
-                "increment": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "default": 1
-                }
-                },
-                "required": [
-                ]
+                "additionalProperties": false
+              }
             },
-            "required": [
-            ],
-            "dependentRequired": {
-            },
+            "required": ["style", "sep_style", "collection_mode", "language", "placeholder_imdb_id"],
             "title": "template_variables"
-        },
+          },
         "template-variables-collections": {
             "type": "array",
             "additionalProperties": true,
