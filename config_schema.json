@@ -65,8 +65,11 @@
                     "type": "integer"
                 },
                 "db_cache": {
-                    "type": "integer"
-                },
+                    "oneOf": [
+                      { "type": "integer" },
+                      { "type": "string", "pattern": "^$" }
+                    ]
+                  },
                 "clean_bundles": {
                     "type": "boolean"
                 },
@@ -1074,7 +1077,8 @@
                 "additionalProperties": false
               }
             },
-            "required": [],
+            "required": [
+            ],
             "title": "template_variables"
           },
         "template-variables-collections": {
