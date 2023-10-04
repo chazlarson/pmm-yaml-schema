@@ -968,9 +968,6 @@
                 "sonarr_add_all": {
                     "type": "boolean"
                 },
-                "delete_collections": {
-                    "type": "boolean"
-                },
                 "mass_genre_update": {
                     "type": "string",
                     "enum": ["tmdb","tvdb","imdb","omdb","anidb","anidb_3_0","anidb_2_5","anidb_2_0","anidb_1_5","anidb_1_0","anidb_0_5","mal","lock","unlock","remove","reset"]
@@ -1099,7 +1096,6 @@
                 "minimum": { "type": "integer"},
                 "offset": { "type": "integer", "minimum": 0 },
                 "overlay_limit": { "type": "integer", "minimum": 1, "maximum": 5 },
-                "position": { "type": "string", "enum": ["left","right"] },
                 "post_nr_text": { "type": "string" },
                 "post_text": { "type": "string" },
                 "pre_nr_text": { "type": "string" },
