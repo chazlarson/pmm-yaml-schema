@@ -1061,7 +1061,7 @@
             },
             "language": {
                 "type": "string",
-                "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no"]
+                "enum": ["en", "fr", "ar", "da", "nl", "de", "it", "pt-br", "nb-no", "es", "sv"]
             },
             "placeholder_imdb_id": {
                 "type": "string",
