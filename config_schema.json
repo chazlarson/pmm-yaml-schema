@@ -238,7 +238,15 @@
                     "type": "string"
                 },
                 "version": {
-                    "type": "integer"
+                    "oneOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "string",
+                            "pattern": ".*redacted.*"
+                        }
+                    ]
                 },
                 "language": {
                     "type": "string"
