@@ -684,7 +684,7 @@
             "properties": {
                 "pmm": {
                     "type": "string",
-                    "enum": ["actor", "anilist","aspect","audio_language","bafta","based","basic","cannes","choice","collectionless","content_rating_cs","content_rating_mal","content_rating_uk","content_rating_us","continent","country","decade","director","emmy","franchise","genre","golden","imdb","myanimelist","network","oscars","other_award","other_chart","producer","region","resolution","seasonal","separator_award","separator_chart","spirit","streaming","studio","subtitle_language","sundance","tautulli","tmdb","trakt","universe","writer","year"]
+                    "enum": ["actor", "anilist","aspect","audio_language","bafta","based","basic","cannes","choice","collectionless","content_rating_cs","content_rating_mal","content_rating_uk","content_rating_us","continent","country","decade","director","emmy","flixpatrol","franchise","genre","golden","imdb","myanimelist","network","oscars","other_award","other_chart","producer","region","resolution","seasonal","separator_award","separator_chart","spirit","streaming","studio","subtitle_language","sundance","tautulli","tmdb","trakt","universe","writer","year"]
                 },
                 "schedule": {
                     "type": "string"
@@ -706,7 +706,7 @@
             "properties": {
                 "pmm": {
                     "type": "string",
-                    "enum": ["aspect","audio_codec","commonsense","content_rating_uk","content_rating_us_movie","content_rating_us_show","direct_play","episode_info","language_count","languages","mediastinger","network","ratings","resolution","ribbon","runtimes","status","streaming","studio","versions","video_format"]
+                    "enum": ["aspect","audio_codec","commonsense","content_rating_uk","content_rating_us_movie","content_rating_us_show","direct_play","episode_info","flixpatrol","language_count","languages","mediastinger","network","ratings","resolution","ribbon","runtimes","status","streaming","studio","versions","video_format"]
                 },
                 "remove_overlays": {
                     "type": "boolean"
