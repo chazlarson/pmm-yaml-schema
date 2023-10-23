@@ -1177,6 +1177,7 @@
                 "minimum": { "type": "integer"},
                 "offset": { "type": "integer", "minimum": 0 },
                 "overlay_limit": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "position": { "type": "string", "enum": ["left","right"] },
                 "post_nr_text": { "type": "string" },
                 "post_text": { "type": "string" },
                 "pre_nr_text": { "type": "string" },
