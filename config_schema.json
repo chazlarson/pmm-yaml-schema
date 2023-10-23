@@ -161,22 +161,22 @@
             "additionalProperties": false,
             "properties": {
                 "error": {
-                    "type": "string"
+                    "type": ["string", "null"]
                 },
                 "version": {
-                    "type": "string"
+                    "type": ["string", "null"]
                 },
                 "run_start": {
-                    "type": "string"
+                    "type": ["string", "null"]
                 },
                 "run_end": {
-                    "type": "string"
+                    "type": ["string", "null"]
                 },
                 "changes": {
-                    "type": "string"
+                    "type": ["string", "null"]
                 },
                 "delete": {
-                    "type": "string"
+                    "type": ["string", "null"]
                 }
             },
             "required": [
@@ -532,7 +532,10 @@
                     "type": "integer"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 },
                 "asset_folders": {
                     "type": "boolean"
@@ -690,7 +693,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 },
                 "template_variables": {
                     "$ref": "#/definitions/template-variables-collections"
@@ -714,6 +720,9 @@
                 "reapply_overlays": {
                     "type": "boolean"
                 },
+                "reapply_overlay": {
+                    "type": "boolean"
+                },
                 "reset_overlays": {
                     "type": "string",
                     "enum": ["tmdb","plex"]
@@ -722,7 +731,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 },
                 "template_variables": {
                     "$ref": "#/definitions/template-variables-overlays"
@@ -743,7 +755,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 },
                 "template_variables": {
                     "$ref": "#/definitions/template-variables-playlists"
@@ -764,7 +779,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 }
             },
             "required": [
@@ -782,7 +800,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 }
             },
             "required": [
@@ -802,7 +823,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 }
             },
             "required": [
@@ -820,7 +844,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 }
             },
             "required": [
@@ -838,7 +865,10 @@
                     "type": "string"
                 },
                 "asset_directory": {
-                    "type": "string"
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
                 }
             },
             "required": [
@@ -1045,12 +1075,13 @@
                 "radarr_remove_by_tag": { "type": "string" },
                 "sonarr_remove_by_tag": { "type": "string" },
                 "delete_collections": {
-                "type": "object",
-                "properties": {
-                    "configured": { "type": "boolean" },
-                    "managed": { "type": "boolean" }
-                },
-                "required": ["configured", "managed"]
+                    "type": "object",
+                    "properties": {
+                        "configured": { "type": "boolean" },
+                        "managed": { "type": "boolean" },
+                        "less": { "type": "integer" }
+                    },
+                    "required": []
                 }
             },
             "required": [],
@@ -1120,9 +1151,9 @@
                 "addon_offset": { "type": "integer", "exclusiveMinimum": 0 },
                 "addon_position": { "type": "string", "enum": ["left","top","bottom","right"] },
                 "back_align": { "type": "string", "enum": ["left","right","center","top","bottom"] },
-                "back_color": { "type": "string", "pattern": "^\\#(\\d{3}|\\d{4}|\\d{6}|\\d{8})$" },
+                "back_color": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
                 "back_height": { "type": "integer", "exclusiveMinimum": 0 },
-                "back_line_color": { "type": "string", "pattern": "^\\#(\\d{3}|\\d{4}|\\d{6}|\\d{8})$" },
+                "back_line_color": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
                 "back_line_width": { "type": "integer", "exclusiveMinimum": 0 },
                 "back_padding": { "type": "integer", "exclusiveMinimum": 0 },
                 "back_radius": { "type": "integer", "exclusiveMinimum": 0 },
@@ -1130,7 +1161,7 @@
                 "builder_level": { "type": "string", "enum": ["show","season","episode"] },
                 "file": { "type": "string" },
                 "flag_alignment": { "type": "string", "enum": ["left","right"] },
-                "font_color": { "type": "string", "pattern": "^\\#(\\d{3}|\\d{4}|\\d{6}|\\d{8})$" },
+                "font_color": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
                 "font_size": { "type": "integer", "exclusiveMinimum": 0 },
                 "font_style": { "type": "string", "enum": ["Any","Italic","Normal","Oblique"] },
                 "font": { "type": "string" },
@@ -1166,7 +1197,7 @@
                 "reapply_overlays": { "type": "boolean" },
                 "reset_overlays": { "type": "string", "enum": ["tmdb", "plex"] },
                 "repo": { "type": "string" },
-                "stroke_color": { "type": "string", "pattern": "^\\#(\\d{3}|\\d{4}|\\d{6}|\\d{8})$" },
+                "stroke_color": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
                 "stroke_width": { "type": "integer", "exclusiveMinimum": 0 },
                 "style": { "type": "string", "enum": ["compact","standard","bigger","round","square","half", "red", "black", "yellow", "gray"] },
                 "text": { "type": "string" },
