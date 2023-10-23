@@ -981,6 +981,7 @@
                 "sonarr_add_all": {
                     "type": "boolean"
                 },
+                "genre_mapper": { "type": "string" },
                 "mass_genre_update": {
                     "type": "string",
                     "enum": ["tmdb","tvdb","imdb","omdb","anidb","anidb_3_0","anidb_2_5","anidb_2_0","anidb_1_5","anidb_1_0","anidb_0_5","mal","lock","unlock","remove","reset"]
