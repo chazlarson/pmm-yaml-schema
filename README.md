@@ -9,4 +9,4 @@ limitations:
 
 TODO:
 
-- schema for matadata yaml
+- schema for metadata yaml

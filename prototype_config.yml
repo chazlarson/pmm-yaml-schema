@@ -1,5 +1,5 @@
 
-# yaml-language-server: $schema=https://raw.githubusercontent.com/chazlarson/pmm-yaml-schema/main/config_schema.json
+# yaml-language-server: $schema=./config_schema.json
 
 libraries:
   Movies:                                           # Must match a library name in your Plex
@@ -8,6 +8,12 @@ libraries:
       sep_style: purple                               # use the purple separators globally for this library
       collection_mode: hide                         # hide the collections within the "library" tab in Plex.
       placeholder_imdb_id: tt8579674                # 1917 (2019) placeholder id for the separators, avoids a plex bug.
+      ignore_ids: 
+      - 1230
+      - 3450
+      - 6780
+      ignore_imdb_ids: tt1234, tt5678, tt7890
+
     metadata_path:
     - pmm: cannes
     - pmm: choice
@@ -44,26 +50,27 @@ libraries:
     - pmm: separator_award                          # An "index card"
     - pmm: bafta                                    # BAFTA Awards
       template_variables:                           # Show collections from current_year-10 onwards.
+        horizontal_offset: 99
         data:
           starting: current_year-10
           ending: current_year
     - pmm: golden                                   # Golden Globes Awards
-      template_variables:                           # Show collections from current_year-10 onwards.
-        data:
-          starting: current_year-10
-          ending: current_year
+      # template_variables:                           # Show collections from current_year-10 onwards.
+      #   data:
+      #     starting: current_year-10
+      #     ending: current_year
     - pmm: oscars                                   # The Oscars
-      template_variables:                           # Show collections from current_year-10 onwards.
-        data:
-          starting: current_year-10
-          ending: current_year
+      # template_variables:                           # Show collections from current_year-10 onwards.
+      #   data:
+      #     starting: current_year-10
+      #     ending: current_year
     - pmm: separator_chart                          # An "index card"
     - pmm: basic                                    # Some basic chart collections
     - pmm: tmdb                                     # TMDb Charts (Popular, Trending, etc.)
     - pmm: audio_language                           # English, French, Arabic, German, etc. audio language 
     - pmm: resolution                               # 4K HDR, 1080P FHD, etc. with the standards style 
-      template_variables:
-        style: standards
+      # template_variables:
+      #   style: standards
     - pmm: studio                                   # DreamWorks Studios, Lucasfilm Ltd, etc.
     - pmm: seasonal                                 # Christmas, Halloween, etc.
       template_variables:                           # Disable any US-specific seasonal collections
@@ -72,10 +79,13 @@ libraries:
         schedule_memorial: never
         schedule_labor: never
     - pmm: streaming                                # Streaming on Disney+, Netflix, etc.
-	  template_variables:
-	    originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
+      # template_variables:
+      #   originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
     - pmm: universe                                 # Marvel Cinematic Universe, Wizarding World, etc.
     overlay_path:
+    - remove_overlays: false                        # Set to true if you want to remove overlays
+    - reapply_overlays: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
+    - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb - can cause image bloat
     - pmm: flixpatrol
     - pmm: episode_info
     - pmm: mediastinger
@@ -89,17 +99,13 @@ libraries:
     - pmm: network
     - pmm: studio
     - pmm: direct_play
-    - remove_overlays: false                        # Set to true if you want to remove overlays
-    # - reapply_overlay: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
-    # - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb - can cause image bloat
     - pmm: audio_codec                              # FLAC, DTS-X, TrueHD, etc. style: standard/compact. compact is default
     - pmm: resolution                               # 4K HDR, 1080P FHD, etc.
     - pmm: ribbon                                   # Used for ribbon in bottom right
     - pmm: streaming                                # Streaming on Disney+, Netflix, etc.
     - pmm: video_format                             # Remux, DVD, Blu-Ray, etc. in bottom left
     settings:
-      asset_directory:
-      - config/assets
+      asset_directory: config/assets
 
     operations:
       split_duplicates: false
@@ -107,10 +113,10 @@ libraries:
 
   TV Shows:                                         # Must match a library name in your Plex
     report_path: config/missing/TV_missing.yml
-    template_variables:
-      sep_style: plum                               # use the plum separators globally for this library
-      collection_mode: hide                         # hide the collections within the "library" tab in Plex.
-      placeholder_imdb_id: tt1190634                # The Boys (2019) placeholder id for the separators, avoids a plex bug.
+    # template_variables:
+    #   sep_style: plum                               # use the plum separators globally for this library
+    #   collection_mode: hide                         # hide the collections within the "library" tab in Plex.
+    #   placeholder_imdb_id: tt1190634                # The Boys (2019) placeholder id for the separators, avoids a plex bug.
     metadata_path:
     - pmm: cannes
     - pmm: choice
@@ -146,31 +152,31 @@ libraries:
     - pmm: collectionless
     - pmm: separator_award                          # An "index card"
     - pmm: bafta                                    # BAFTA Awards
-      template_variables:                           # Show collections from current_year-10 onwards.
-        data:
-          starting: current_year-10
-          ending: current_year
+      # template_variables:                           # Show collections from current_year-10 onwards.
+      #   data:
+      #     starting: current_year-10
+      #     ending: current_year
     - pmm: golden                                   # Golden Globes Awards
-      template_variables:                           # Show collections from current_year-10 onwards.
-        data:
-          starting: current_year-10
-          ending: current_year
+      # template_variables:                           # Show collections from current_year-10 onwards.
+      #   data:
+      #     starting: current_year-10
+      #     ending: current_year
     - pmm: oscars                                   # The Oscars
-      template_variables:                           # Show collections from current_year-10 onwards.
-        data:
-          starting: current_year-10
-          ending: current_year
+      # template_variables:                           # Show collections from current_year-10 onwards.
+      #   data:
+      #     starting: current_year-10
+      #     ending: current_year
     - pmm: separator_chart                          # An "index card"
     - pmm: basic                                    # Some basic chart collections
     - pmm: tmdb                                     # TMDb Charts (Popular, Trending, etc.)
     - pmm: audio_language                           # English, French, Arabic, German, etc. audio language 
     - pmm: resolution                               # 4K HDR, 1080P FHD, etc. with the standards style 
-      template_variables:
-        style: standards
+      # template_variables:
+      #   style: standards
     - pmm: network                                  # ABC, CBC, NBC, FOX, etc.
     - pmm: streaming                                # Streaming on Disney+, Netflix, etc.
-	  template_variables:
-	    originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
+      # template_variables:
+      #   originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
     overlay_path:
     - remove_overlays: false                        # Set to true if you want to remove overlays
     # - reapply_overlay: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
@@ -188,28 +194,28 @@ libraries:
     - pmm: direct_play
     - pmm: audio_codec                              # FLAC, DTS-X, TrueHD, etc. on show and episode
     - pmm: audio_codec
-      template_variables:
-        overlay_level: episode
+      # template_variables:
+      #   overlay_level: episode
     - pmm: episode_info                             # S##E## information in bottom right on episode
-      template_variables:
-        overlay_level: episode
+      # template_variables:
+      #   overlay_level: episode
     - pmm: resolution                               # 4K HDR, 1080P FHD, etc. on show, episode, and season
     - pmm: resolution
-      template_variables:
-        overlay_level: episode
+      # template_variables:
+      #   overlay_level: episode
     - pmm: resolution
-      template_variables:
-        overlay_level: season
+      # template_variables:
+      #   overlay_level: season
     - pmm: ribbon                                   # Used for ribbon in bottom right on show
     - pmm: status                                   # Airing, Returning, Ended, Canceled on show
     - pmm: versions                                 # Will show duplicates for that media item on show and episode
     - pmm: versions                                 
-      template_variables:
-        overlay_level: episode
+      # template_variables:
+      #   overlay_level: episode
     - pmm: video_format                             # Remux, DVD, Blu-Ray, etc. in bottom left on show, episode, and season
     - pmm: video_format
-      template_variables:
-        overlay_level: episode
+      # template_variables:
+      #   overlay_level: episode
     settings:
       asset_directory:
       - config/assets
@@ -217,6 +223,11 @@ libraries:
     operations:
       split_duplicates: false
       assets_for_all: false
+      delete_collections:
+        managed: false
+        configured: true
+        less: 123
+
   Anime:
     metadata_path:
       - pmm: basic               # This is a file within PMM's defaults folder
@@ -233,7 +244,8 @@ playlist_files:
 settings:
   cache: true
   cache_expiration: 60
-  asset_directory: config/assets
+  asset_directory: 
+  - config/assets
   asset_folders: true
   asset_depth: 0
   create_asset_folders: false
@@ -262,7 +274,7 @@ settings:
   ignore_ids:
   ignore_imdb_ids:
   item_refresh_delay: 0
-  playlist_sync_to_user: all
+  playlist_sync_to_users: all
   playlist_exclude_users:
   playlist_report: false
   verify_ssl: true
@@ -276,34 +288,34 @@ webhooks:                        # Can be individually specified per library as 
   changes:
 plex:                            # Can be individually specified per library as well; REQUIRED for the script to run
   url: http://192.168.1.12:32400
-  token: ####################
+  token: this-is-a-placeholder-string
   timeout: 60
-  db_cache:
+  db_cache: 999
   clean_bundles: false
   empty_trash: false
   optimize: false
 tmdb:                            # REQUIRED for the script to run
-  apikey: ################################
+  apikey: this-is-a-placeholder-string
   language: en
 tautulli:                        # Can be individually specified per library as well
   url: http://192.168.1.12:8181
-  apikey: ################################
+  apikey: this-is-a-placeholder-string
 github:
-  token: ################################
+  token: this-is-a-placeholder-string
 omdb:
-  apikey: ########
+  apikey: this-is-a-placeholder-string
   cache_expiration: 60
 mdblist:
-  apikey: #########################
+  apikey: this-is-a-placeholder-string
   cache_expiration: 60
 notifiarr:
-  apikey: ####################################
+  apikey: this-is-a-placeholder-string
 anidb:                           # Not required for AniDB builders unless you want mature content
-  username: ######
-  password: ######
+  username: this-is-a-placeholder-string
+  password: this-is-a-placeholder-string
 radarr:                          # Can be individually specified per library as well
   url: http://192.168.1.12:7878
-  token: ################################
+  token: this-is-a-placeholder-string
   add_missing: false
   add_existing: false
   root_folder_path: S:/Movies
@@ -316,7 +328,7 @@ radarr:                          # Can be individually specified per library as 
   plex_path:
 sonarr:                          # Can be individually specified per library as well
   url: http://192.168.1.12:8989
-  token: ################################
+  token: this-is-a-placeholder-string
   add_missing: false
   add_existing: false
   root_folder_path: "S:/TV Shows"
@@ -331,8 +343,8 @@ sonarr:                          # Can be individually specified per library as 
   sonarr_path:
   plex_path:
 trakt:
-  client_id: ####################
-  client_secret: ####################
+  client_id: this-is-a-placeholder-string
+  client_secret: this-is-a-placeholder-string
   pin:
   authorization:
     # everything below is autofilled by the script
@@ -343,8 +355,8 @@ trakt:
     scope: public
     created_at:
 mal:
-  client_id: ####################
-  client_secret: ####################
+  client_id: this-is-a-placeholder-string
+  client_secret: this-is-a-placeholder-string
   authorization:
     # everything below is autofilled by the script
     access_token:
