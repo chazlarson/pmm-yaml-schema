@@ -1186,6 +1186,7 @@
                 "post_text": { "type": "string" },
                 "pre_nr_text": { "type": "string" },
                 "pre_text": { "type": "string" },
+                "rating_alignment": { "type": "string", "enum": ["vertical", "horizontal"] },
                 "rating1": { "type": "string", "enum": ["critic", "audience", "user"] },
                 "rating1_image": { "type": "string", "enum": ["anidb", "imdb", "letterboxd", "tmdb", "metacritic", "rt_popcorn", "rt_tomato", "trakt", "mal", "mdb", "star"] },
                 "rating1_font": { "type": "string" },
