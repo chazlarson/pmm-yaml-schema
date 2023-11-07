@@ -119,6 +119,49 @@ libraries:
         "Action/Adventure": Action 
         "Action & Adventure": Action
         Romantic Comedy:
+      mass_audience_rating_update: tmdb
+      mass_background_update: tmdb
+      mass_collection_mode: default
+      mass_content_rating_update: mdb
+      mass_critic_rating_update: tmdb
+      mass_episode_audience_rating_update: tmdb
+      mass_episode_critic_rating_update: tmdb
+      mass_episode_user_rating_update: tmdb
+      mass_genre_update: tmdb
+      mass_imdb_parental_labels: none
+      mass_original_title_update: anidb
+      mass_originally_available_update: tmdb
+      mass_poster_update: tmdb
+      mass_studio_update: tmdb
+      mass_user_rating_update: tmdb
+      radarr_add_all: false
+      radarr_remove_by_tag: foo
+      remove_title_parentheses: false
+      sonarr_add_all: false
+      sonarr_remove_by_tag: 
+        - foo
+        - bar
+        - baz
+      update_blank_track_titles: false
+
+      delete_collections: 
+        less: 1
+        managed: false
+        configured: false
+
+      content_rating_mapper:
+        PG: Y-10 
+        "PG-13": Y-10
+        R:
+
+      metadata_backup:
+        path: config/Movie_Backup.yml
+        sync_tags: true
+        exclude:
+        - foo
+        - bar
+        add_blank_entries: false
+
 
   TV Shows:                                         # Must match a library name in your Plex
     report_path: config/missing/TV_missing.yml

@@ -563,7 +563,7 @@
                     "type": "integer"
                 },
                 "default_collection_order": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "delete_below_minimum": {
                     "type": "boolean"
@@ -1063,8 +1063,18 @@
                     "type": "string",
                     "enum": ["default","hide","hide_items","show_items"]
                 },
-                "radarr_remove_by_tag": { "type": "string" },
-                "sonarr_remove_by_tag": { "type": "string" },
+                "radarr_remove_by_tag": {
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
+                },
+                "sonarr_remove_by_tag": { 
+                    "oneOf": [
+                        { "type": "string"},
+                        { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                    ]
+                },
                 "delete_collections": {
                     "type": "object",
                     "properties": {
@@ -1075,11 +1085,29 @@
                     "required": []
                 },
                 "genre_mapper": {
-                    "properties": {
-                    },
                     "patternProperties": {
                         "^.*$": { "type":  ["string", "null"] }
                     }
+                },
+                "content_rating_mapper": {
+                    "patternProperties": {
+                        "^.*$": { "type":  ["string", "null"] }
+                    }
+                },
+                "metadata_backup": {
+                    "type": "object",
+                    "properties": {
+                        "path": { "type": "string" },
+                        "exclude": { 
+                            "oneOf": [
+                                { "type": "string"},
+                                { "type": "array", "uniqueItems": true, "items": {"type": "string" }}
+                            ]
+                        },
+                        "sync_tags": { "type": "boolean" },
+                        "add_blank_entries": { "type": "boolean" }
+                    },
+                    "required": []
                 }
             },
             "required": [],
@@ -1175,12 +1203,10 @@
                 "minimum": { "type": "integer"},
                 "offset": { "type": "integer", "minimum": 0 },
                 "overlay_limit": { "type": "integer", "minimum": 1, "maximum": 5 },
-                "position": { "type": "string", "enum": ["left","right"] },
                 "post_nr_text": { "type": "string" },
                 "post_text": { "type": "string" },
                 "pre_nr_text": { "type": "string" },
                 "pre_text": { "type": "string" },
-                "rating_alignment": { "type": "string", "enum": ["vertical", "horizontal"] },
                 "rating1": { "type": "string", "enum": ["critic", "audience", "user"] },
                 "rating1_image": { "type": "string", "enum": ["anidb", "imdb", "letterboxd", "tmdb", "metacritic", "rt_popcorn", "rt_tomato", "trakt", "mal", "mdb", "star"] },
                 "rating1_font": { "type": "string" },
@@ -1193,7 +1219,6 @@
                 "rating3_image": { "type": "string", "enum": ["anidb", "imdb", "letterboxd", "tmdb", "metacritic", "rt_popcorn", "rt_tomato", "trakt", "mal", "mdb", "star"] },
                 "rating3_font": { "type": "string" },
                 "rating3_font_size": { "type": "integer", "minimum": 1 },
-                "region": { "type": "string", "enum": ["us", "uk", "ca", "da", "de", "es", "fr", "it", "pt-br"] },
                 "remove_overlays": { "type": "boolean" },
                 "reapply_overlays": { "type": "boolean" },
                 "reset_overlays": { "type": "string", "enum": ["tmdb", "plex"] },
@@ -1213,7 +1238,6 @@
                 "vertical_position": { "type": "string", "enum": ["top","top2","top3","center","center_top","center_bottom","bottom","bottom2","bottom3"] }
             },
             "patternProperties": {
-                "^back_color_.*$": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
                 "^country_.*$": { "type": "string", "pattern": "^[A-Z]{2}$" },
                 "^file_.*$": { "type": "string" },
                 "^git_.*$": { "type": "string" },
