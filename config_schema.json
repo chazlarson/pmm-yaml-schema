@@ -614,7 +614,7 @@
                     "type": "integer"
                 },
                 "playlist_sync_to_users": {
-                    "type": "string"
+                    "type": [ "string", "null" ]
                 },
                 "playlist_exclude_users": {
                     "type": "null"
@@ -934,7 +934,7 @@
                     }, {
                         "$ref": "#/definitions/repo-path"
                     }
-                ]
+                    ]
             }
         },
         "overlay-path": {
@@ -1073,6 +1073,13 @@
                         "less": { "type": "integer" }
                     },
                     "required": []
+                },
+                "genre_mapper": {
+                    "properties": {
+                    },
+                    "patternProperties": {
+                        "^.*$": { "type":  ["string", "null"] }
+                    }
                 }
             },
             "required": [],
