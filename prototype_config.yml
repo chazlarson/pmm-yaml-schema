@@ -1,4 +1,3 @@
-
 # yaml-language-server: $schema=./config_schema.json
 
 libraries:
@@ -24,7 +23,7 @@ libraries:
     - pmm: tautulli
     - pmm: imdb
     - pmm: trakt
-    - pmm: flixpatrol
+    # - pmm: flixpatrol
     - pmm: anilist
     - pmm: myanimelist
     - pmm: other_chart
@@ -51,26 +50,29 @@ libraries:
     - pmm: bafta                                    # BAFTA Awards
       template_variables:                           # Show collections from current_year-10 onwards.
         horizontal_offset: 99
+        # back_color: "#00000099"
+        back_color: "#FFAABBDD"
+        
         data:
           starting: current_year-10
           ending: current_year
     - pmm: golden                                   # Golden Globes Awards
-      # template_variables:                           # Show collections from current_year-10 onwards.
-      #   data:
-      #     starting: current_year-10
-      #     ending: current_year
+      template_variables:                           # Show collections from current_year-10 onwards.
+        data:
+          starting: current_year-10
+          ending: current_year
     - pmm: oscars                                   # The Oscars
-      # template_variables:                           # Show collections from current_year-10 onwards.
-      #   data:
-      #     starting: current_year-10
-      #     ending: current_year
+      template_variables:                           # Show collections from current_year-10 onwards.
+        data:
+          starting: current_year-10
+          ending: current_year
     - pmm: separator_chart                          # An "index card"
     - pmm: basic                                    # Some basic chart collections
     - pmm: tmdb                                     # TMDb Charts (Popular, Trending, etc.)
     - pmm: audio_language                           # English, French, Arabic, German, etc. audio language 
     - pmm: resolution                               # 4K HDR, 1080P FHD, etc. with the standards style 
-      # template_variables:
-      #   style: standards
+      template_variables:
+        style: standards
     - pmm: studio                                   # DreamWorks Studios, Lucasfilm Ltd, etc.
     - pmm: seasonal                                 # Christmas, Halloween, etc.
       template_variables:                           # Disable any US-specific seasonal collections
@@ -79,15 +81,18 @@ libraries:
         schedule_memorial: never
         schedule_labor: never
     - pmm: streaming                                # Streaming on Disney+, Netflix, etc.
-      # template_variables:
-      #   originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
+      template_variables:
+        originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
     - pmm: universe                                 # Marvel Cinematic Universe, Wizarding World, etc.
     overlay_path:
     - remove_overlays: false                        # Set to true if you want to remove overlays
     - reapply_overlays: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
     - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb - can cause image bloat
-    - pmm: flixpatrol
+    # - pmm: flixpatrol
     - pmm: episode_info
+      template_variables:                           # Show collections from current_year-10 onwards.
+        horizontal_offset: 99
+        back_color: "#FF11BB22"
     - pmm: mediastinger
     - pmm: ratings
     - pmm: status
@@ -110,13 +115,17 @@ libraries:
     operations:
       split_duplicates: false
       assets_for_all: false
+      genre_mapper:
+        "Action/Adventure": Action 
+        "Action & Adventure": Action
+        Romantic Comedy:
 
   TV Shows:                                         # Must match a library name in your Plex
     report_path: config/missing/TV_missing.yml
-    # template_variables:
-    #   sep_style: plum                               # use the plum separators globally for this library
-    #   collection_mode: hide                         # hide the collections within the "library" tab in Plex.
-    #   placeholder_imdb_id: tt1190634                # The Boys (2019) placeholder id for the separators, avoids a plex bug.
+    template_variables:
+      sep_style: plum                               # use the plum separators globally for this library
+      collection_mode: hide                         # hide the collections within the "library" tab in Plex.
+      placeholder_imdb_id: tt1190634                # The Boys (2019) placeholder id for the separators, avoids a plex bug.
     metadata_path:
     - pmm: cannes
     - pmm: choice
@@ -127,7 +136,7 @@ libraries:
     - pmm: tautulli
     - pmm: imdb
     - pmm: trakt
-    - pmm: flixpatrol
+    # - pmm: flixpatrol
     - pmm: anilist
     - pmm: myanimelist
     - pmm: other_chart
@@ -152,36 +161,36 @@ libraries:
     - pmm: collectionless
     - pmm: separator_award                          # An "index card"
     - pmm: bafta                                    # BAFTA Awards
-      # template_variables:                           # Show collections from current_year-10 onwards.
-      #   data:
-      #     starting: current_year-10
-      #     ending: current_year
+      template_variables:                           # Show collections from current_year-10 onwards.
+        data:
+          starting: current_year-10
+          ending: current_year
     - pmm: golden                                   # Golden Globes Awards
-      # template_variables:                           # Show collections from current_year-10 onwards.
-      #   data:
-      #     starting: current_year-10
-      #     ending: current_year
+      template_variables:                           # Show collections from current_year-10 onwards.
+        data:
+          starting: current_year-10
+          ending: current_year
     - pmm: oscars                                   # The Oscars
-      # template_variables:                           # Show collections from current_year-10 onwards.
-      #   data:
-      #     starting: current_year-10
-      #     ending: current_year
+      template_variables:                           # Show collections from current_year-10 onwards.
+        data:
+          starting: current_year-10
+          ending: current_year
     - pmm: separator_chart                          # An "index card"
     - pmm: basic                                    # Some basic chart collections
     - pmm: tmdb                                     # TMDb Charts (Popular, Trending, etc.)
     - pmm: audio_language                           # English, French, Arabic, German, etc. audio language 
     - pmm: resolution                               # 4K HDR, 1080P FHD, etc. with the standards style 
-      # template_variables:
-      #   style: standards
+      template_variables:
+        style: standards
     - pmm: network                                  # ABC, CBC, NBC, FOX, etc.
     - pmm: streaming                                # Streaming on Disney+, Netflix, etc.
-      # template_variables:
-      #   originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
+      template_variables:
+        originals_only: true						# Only create collections for Original Content (i.e. Netflix Originals)
     overlay_path:
     - remove_overlays: false                        # Set to true if you want to remove overlays
-    # - reapply_overlay: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
-    # - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb - can cause image bloat
-    - pmm: flixpatrol
+    - reapply_overlay: false                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays - can cause image bloat
+    - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb - can cause image bloat
+    # - pmm: flixpatrol
     - pmm: mediastinger
     - pmm: ratings
     - pmm: status
