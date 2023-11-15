@@ -563,7 +563,7 @@
                     "type": "integer"
                 },
                 "default_collection_order": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "delete_below_minimum": {
                     "type": "boolean"
